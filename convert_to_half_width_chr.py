@@ -2,7 +2,7 @@ import sys
 import unicodedata
 
 # switch all words over to half-width-characters. 
-def change_to_uni(fn1):
+def convert_to_half(fn1):
     sentences = []
     with open(fn1, 'r', encoding = 'UTF-8') as file:
          for line in file:
@@ -14,7 +14,7 @@ def change_to_uni(fn1):
 # make a new file composed of half-width-caharacters only. 
 def main(fn1, fn2):
     with open(fn2, 'w', encoding = 'UTF-8') as file:
-        sentences = change_to_uni(fn1)    
+        sentences = convert_to_half(fn1)    
         for line in sentences:
             file.write(''.join(line))       
 
